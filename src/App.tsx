@@ -15,9 +15,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
-      <header className="header">
-          CMS
-        </header>
+        <header className="header">CMS</header>
         <Switch>
           {/* Define the route for the main page (post-login) */}
           <Route path="/main">

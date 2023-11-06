@@ -1,5 +1,6 @@
 // src/components/Login.tsx
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 
 type UserLoginData = {
   email: string;
@@ -8,9 +9,10 @@ type UserLoginData = {
 
 const Login: React.FC = () => {
   const [loginData, setLoginData] = useState<UserLoginData>({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
+  const history = useHistory(); // Initialize useHistory
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -18,9 +20,8 @@ const Login: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would send the data to the backend
     console.log(loginData);
-    // TODO: POST request to the backend login endpoint
+    history.push('/main'); // Navigate to the main page
   };
 
   return (

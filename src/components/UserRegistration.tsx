@@ -1,4 +1,6 @@
+// src/components/UserRegistration.tsx
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"; // Import useHistory
 
 type UserRegistrationData = {
   name: string;
@@ -8,7 +10,7 @@ type UserRegistrationData = {
   password: string;
 };
 
-const UserRegistration = () => {
+const UserRegistration: React.FC = () => {
   const [userData, setUserData] = useState<UserRegistrationData>({
     name: "",
     surname: "",
@@ -16,6 +18,7 @@ const UserRegistration = () => {
     email: "",
     password: "",
   });
+  const history = useHistory(); // Initialize useHistory
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -23,9 +26,8 @@ const UserRegistration = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would send the data to the backend
     console.log(userData);
-    // TODO: POST request to the backend registration endpoint
+    history.push("/main"); // Navigate to the main page after registration
   };
 
   return (

@@ -116,7 +116,7 @@
   .inactive-button:hover {
     background-color: #e7f3ff;
   }
-  
+
   .header {
     text-align: center;
     padding: 20px 0;
@@ -126,5 +126,41 @@
     font-size: 32px; 
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .main-page nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    gap: 10px; /* Space between the links */
+  }
+  
+  .main-page nav li {
+    display: flex;
+  }
+  
+  .main-page nav a {
+    text-decoration: none;
+    color: blue; /* Example text color */
+    font-weight: bold;
+    padding: 10px; /* Padding for clickable area */
+  }
+  
+  /* Add a hover effect for the links */
+  .main-page nav a:hover {
+    text-decoration: underline;
+  }
+  /* Add styles for the textarea and file input */
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+  }
+  
+  form input[type="file"] {
+    margin-bottom: 10px;
   }
   

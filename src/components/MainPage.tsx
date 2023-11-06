@@ -1,8 +1,9 @@
 // src/components/MainPage.tsx
-import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import Profile from './Profile';
-import Activity from './Activity';
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Profile from "./Profile";
+import Activity from "./Activity";
+import NewPost from "./NewPost"; // Import the NewPost component
 
 const MainPage = () => {
   return (
@@ -16,17 +17,21 @@ const MainPage = () => {
             <li>
               <Link to="/profile">Profile</Link>
             </li>
+            <li>
+              <Link to="/new-post">New Post</Link> {/* Add this line */}
+            </li>
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/activity">
             <Activity />
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/new-post">
+            <NewPost /> {/* Add this line */}
           </Route>
         </Switch>
       </div>
